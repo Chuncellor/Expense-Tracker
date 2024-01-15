@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import SignIn from './SignIn';
 
 function Home({ user, handleSignIn }) {
@@ -9,7 +9,9 @@ function Home({ user, handleSignIn }) {
       {user ? (
         <div>
           <p>Welcome, {user.username}!</p>
+          <Link to="/note">
             <button>Start Taking Notes</button>
+          </Link>
         </div>
       ) : (
         <SignIn handleSignIn={handleSignIn} />

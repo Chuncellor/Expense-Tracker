@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+.App {
+  text-align: center;
+  font-family: 'Montserrat';
+  background-image: linear-gradient(79deg, salmon, rosybrown, lightcoral, white );
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  border-radius: 12px;
+  border: solid, 10px, black;
+}
+
+
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  font-weight: bold;
+}
+
+.button{
+width: 200px;
+background-color: firebrick;
+height: 60px;
+border-radius: 12px;
+font-size: 80%;
+border: maroon 5px;
+cursor: pointer;
+color: white;
+font-family: 'Montserrat';
+}
+
+.sign-in-buttons {
+  width: 170px;
+background-color: crimson;
+height: 50px;
+border-radius: 12px;
+font-size: 70%;
+border: maroon 5px;
+cursor: pointer;
+margin-top: 10px;
+color: white;
+font-family: 'Montserrat';
+}
+
+.button:hover, .sign-in-buttons:hover {
+  opacity: 0.8;
+}
+
+
+.sign-in {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-image: linear-gradient(79deg, salmon, rosybrown, lightcoral, white );
+  font-family: 'Montserrat';
+}
+
+.auth-form-container, .sign-in-form, .register-form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+@media screen and (min-width: 600px) {
+  .auth-form-container {
+    padding: 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0.5rem;
+  }
+}
+
+.sign-in-form button, .register-form button {
+  border: none;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+  font-family: 'Montserrat';
+  cursor: pointer;
+}
+
+.sign-in-form button:hover, .register-form button:hover {
+  opacity: .8;
+}
+
+.return button {
+  background: transparent;
+  color: white;
+  text-decoration: underline;
+  border: none; 
+  font-family: 'Montserrat';
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.return button:hover {
+  opacity: 1.5;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+label {
+  text-align: left;
+  padding: 0.25rem 0;
+}
+
+.notes-page{
+  background-color: pink;
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+padding-left: 10%
+;
+  font-family: 'Montserrat';
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.note-list {
+background-color: white;
+border-radius: 25px;
+padding: 5%;
+padding-right: 20%;
+margin-left: 10%;
+text-align: center;
+align-items: center;
+display: flex;
+flex-direction: column;
+
+}
+
+.content{
+
+}
+

@@ -1,61 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import SignIn from './SignIn';
+import Home from './Home';
+import NotePage from './NotePage';
 
 function App() {
-  const [setData] = useState([]);
-  const [expenses, setExpenses] = useState([]);
-  const [newExpense, setNewExpense] = useState({ name: '', amount: '' });
+  const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    // Fetch data from your backend API
-    axios.get('/api/data')
-      .then(response => setData(response.data))
-      .catch(error => console.error(error));
-  },);
-
-  useEffect(() => {
-    // Fetch all expenses
-    axios.get('/api/expenses')
-      .then(response => setExpenses(response.data))
-      .catch(error => console.error(error));
-  }, []);
-
-  const handleAddExpense = () => {
-    // Add a new expense
-    axios.post('/api/expenses', newExpense)
-      .then(response => {
-        setExpenses([...expenses, response.data]);
-        setNewExpense({ name: '', amount: '' });
-      })
-      .catch(error => console.error(error));
+  const handleSignIn = (username) => {
+    setUser({ username });
   };
 
-   return (
-    <div className="App">
-      <h1>Expense Tracker</h1>
-      <div>
-        <input
-          type="text"
-          placeholder="Expense Name"
-          value={newExpense.name}
-          onChange={(e) => setNewExpense({ ...newExpense, name: e.target.value })}
-        />
-        <input
-          type="number"
-          placeholder="Expense Amount"
-          value={newExpense.amount}
-          onChange={(e) => setNewExpense({ ...newExpense, amount: e.target.value })}
-        />
-        <button onClick={handleAddExpense}>Add Expense</button>
-      </div>
-      <ul>
-        {expenses.map(expense => (
-          <li key={expense._id}>
-            {expense.name} - ${expense.amount}
-          </li>
-        ))}
-      </ul>
-    </div>
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home user={user} handleSignIn={handleSignIn} />} />
+        <Route path="/note" element={<NotePage user={user} />} />
+      </Routes>
+    </Router>
   );
 }
 
